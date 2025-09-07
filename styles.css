@@ -25,13 +25,12 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
+  background-color: #8BD1CB; /* Soft light blue for a fresh look */
   font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #222;
 }
-
 /* Add a slight shadow and rounded corners to each section for depth */
 section {
   background: #fff; /* White background for sections */
@@ -45,7 +44,7 @@ section {
 .hero {
   position: relative; /* Needed for overlay */
   /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+  background-image: url('https://s7d9.scene7.com/is/image/pacificdentalservices/young-african-girl-glass-water?fmt=webp-alpha');
   background-size: cover;      /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
@@ -62,52 +61,134 @@ section {
 
 /* Make the headline bold and modern */
 .hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
-}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #eaf6fb;
+  }
 
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
+  /* Main container for two-column layout */
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
 
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
+  /* Left blue section with rounded edge */
+  .left-section {
+    background: #5fa8d3;
+    color: #fff;
+    width: 45%;
+    min-width: 320px;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px 30px 40px 40px;
+    position: relative;
+    z-index: 2;
+  }
 
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
+  /* Logo and navigation at the top */
+  .logo-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
 
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
+  .logo {
+    height: 40px;
+    background: #eaf6fb;
+    border-radius: 8px;
+    padding: 4px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
 
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
+  nav {
+    display: flex;
+    gap: 20px;
+  }
 
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.2s;
+  }
+  .nav-link:hover {
+    color: #d9f3ff;
+  }
+
+  /* Hero text in a rounded shape */
+  .hero-text {
+    background: #eaf6fb;
+    color: #1a3a4a;
+    border-radius: 80px 80px 80px 0;
+    padding: 36px 32px 32px 32px;
+    margin-top: 30px;
+    max-width: 420px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .hero-text h1 {
+    font-size: 1.5em;
+    margin-bottom: 18px;
+    color: #1a3a4a;
+  }
+  .bold-blue {
+    color: #0077b6;
+    font-weight: bold;
+  }
+  .hero-text p {
+    color: #3a5a6a;
+    font-size: 1em;
+    margin: 0;
+  }
+
+  /* Right section with background image */
+  .right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Hero image styling */
+  .hero-image {
+    width: 95%;
+    max-width: 500px;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    object-fit: cover;
+  }
+
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 900px) {
+    .container {
+      flex-direction: column;
+    }
+    .left-section {
+      width: 100%;
+      border-radius: 0 0 80px 80px;
+      align-items: center;
+      padding: 30px 10px 30px 10px;
+    }
+    .right-section {
+      min-height: 300px;
+      padding: 20px 0;
+    }
+    .hero-image {
+      width: 90%;
+      max-width: 350px;
+    }
+  }
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
@@ -193,6 +274,12 @@ section {
   }
 
   .impact-image {
-    width: 300px;
+    width: 380px; /* Make the child picture bigger */
+
+    /* Add a blue border and circular shape to the image */
+    border-radius: 50%; /* Make the image circular */
+    border: 8px solid #2E9DF7; /* Blue border */
+    box-shadow: 0 4px 16px rgba(46, 157, 247, 0.15); /* Soft blue shadow */
   }
+}
 }

@@ -1,47 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity:Water</title>
+  <style>
+    body {
+      /* Try to use Proxima (Proxima Nova) if the user has it installed.
+        If you want to load the commercial Proxima Nova webfont, add a webfont link
+        (from your font provider) in the <head> and remove the !important below. */
+      font-family: 'Proxima Nova', 'Proxima', 'Helvetica Neue', Arial, sans-serif !important;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background-color: #e6ecef;
+    }
+
+    header .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      background: #888;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #666;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      background: #8BD1CB;
+    }
+
+    .hero-text {
+      flex: 1;
+      padding-right: 30px;
+    }
+
+    .hero-text h2 {
+      font-size: 1.8rem;
+      color: #003366;
+    }
+
+    .hero-text p {
+      margin-top: 15px;
+      color: #555;
+    }
+
+    .hero-image {
+      flex: 1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e6ecef;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <header>
+    <div class="logo">Charity:Water</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <section class="hero">
+    <!-- Hero text box starts here -->
+    <div class="hero-text-box">
+      <!-- Hero text content stacked vertically -->
+      <div class="hero-text">
+      <h2>See the Change You Create:<br>Your Activism Directly Funds Clean Water.</h2>
+      <p>
+        We guarantee 100% of your donation builds water projects. Then, we prove it with satellite images and coordinates, delivering the radical transparency you demand.
+      </p>
+      </div>
+    </div>
+    <!-- Hero text box ends here -->
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
+    <style>
+      /* Let hero children fill the section height so the text box can be full-height */
+      section.hero {
+      align-items: stretch; /* let children fill the section height */
+      }
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+      /* Hero text box styles: a vertical box separate from the image */
+      .hero-text-box {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 40px 30px;
+      width: 360px; /* fixed column width to separate from the image */
+      height: calc(100vh - 70px); /* fill from under the header to the bottom */
+      display: flex;
+      flex-direction: column; /* stack text vertically */
+      justify-content: center; /* center the text vertically inside the box */
+      margin-right: 30px; /* space between the box and the image on the right */
+      box-sizing: border-box;
+      }
+
+      .hero-text h2 {
+      margin: 0;
+      color: #003366;
+      font-size: 1.8rem;
+      }
+
+      .hero-text p {
+      margin-top: 15px;
+      color: #555;
+      }
+
+      /* Ensure the main hero image (the separate element already in the document)
+       takes the remaining horizontal space */
+      section.hero > .hero-image {
+      flex: 1;
+      display: flex;                 /* use flex to center the image inside the area */
+      align-items: center;           /* vertically center the image */
+      justify-content: center;       /* horizontally center the image */
+      overflow: hidden;              /* hide any overflow when image is larger */
+      }
+
+      /* Keep the image's aspect ratio no matter the screen size:
+       - max-width and max-height ensure the image scales while preserving intrinsic aspect ratio
+       - width:auto and height:auto prevent distortion */
+      section.hero > .hero-image img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      /* object-fit not required here because we aren't forcing both width and height */
+      }
+
+      /* Responsive: stack the box above the image on small screens */
+      @media (max-width: 800px) {
+      section.hero {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .hero-text-box {
+        width: auto;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      /* When stacked vertically, allow the image to resize but keep aspect ratio */
+      section.hero > .hero-image {
+        width: 100%;
+        height: auto;
+      }
+      section.hero > .hero-image img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+      }
+      }
+    </style>
+    <!-- Hero image section -->
+    <div class="hero-image">
+      <!-- When clicked, the image will open a link (replace # with your URL if needed) -->
+      <a href="#">
+      <img src="https://s7d9.scene7.com/is/image/pacificdentalservices/young-african-girl-glass-water?fmt=webp-alpha" alt="Child with water glass">
+      <!-- This text appears when you hover over the image -->
+      <span class="hover-text">Hear Her Story</span>
+      </a>
+    </div>
+    <!-- Sidebar menu for small screens -->
+    <div id="sidebar" class="sidebar">
+      <a href="#" class="closebtn" onclick="closeSidebar()">&times;</a>
+      <a href="#">Home</a>
+      <a href="#">Product</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <!-- Button to open sidebar -->
+    <span class="openbtn" onclick="openSidebar()">&#9776; Menu</span>
+    <!-- Sidebar styles and script -->
+    <style>
+      /* Hide sidebar and menu button by default */
+      .sidebar, .openbtn {
+      display: none;
+      }
+      /* Sidebar styles */
+      .sidebar {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #e6ecef;
+      padding-top: 60px;
+      z-index: 1000;
+      transition: 0.3s;
+      }
+      .sidebar a {
+      display: block;
+      color: #333;
+      padding: 16px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      }
+      .sidebar a:hover {
+      background-color: #ccc;
+      }
+      .closebtn {
+      position: absolute;
+      /* Move the close button to the top right of the sidebar */
+      top: 10px;
+      right: 20px;
+      font-size: 2rem;
+      color: #003366;
+      background: none;
+      border: none;
+      cursor: pointer;
+      }
+      .openbtn {
+      font-size: 1.5rem;
+      cursor: pointer;
+      background-color: #888;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1100;
+      }
+      /* Make the menu button smaller and move it to the right */
+      .openbtn {
+        font-size: 1.1rem;
+        padding: 6px 14px;
+        right: 20px;
+        left: auto;
+      }
+
+      /* Make the hero image clickable and show text on hover */
+      .hero-image {
+        position: relative;
+        cursor: pointer;
+      }
+      .hero-image .hover-text {
+        display: none;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 51, 102, 0.85);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 1rem;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      .hero-image:hover .hover-text {
+        display: block;
+      }
+      /* Show sidebar and menu button on small screens */
+      @media (max-width: 600px) {
+      header nav {
+        display: none;
+      }
+      .openbtn {
+        display: block;
+      }
+      }
+    </style>
+    <script>
+      // Function to open the sidebar
+      function openSidebar() {
+      document.getElementById("sidebar").style.display = "block";
+      }
+      // Function to close the sidebar
+      function closeSidebar() {
+      document.getElementById("sidebar").style.display = "none";
+      }
+      // Hide sidebar if window is resized above 600px
+      window.addEventListener('resize', function() {
+      if (window.innerWidth > 600) {
+        document.getElementById("sidebar").style.display = "none";
+      }
+      });
+    </script>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Charity:Water | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
