@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charity:Water</title>
+  <!-- Proxima Nova webfont via Bunny Fonts (free alternative) -->
+  <link href="https://fonts.bunny.net/css?family=proxima-nova:400,700" rel="stylesheet" />
   <style>
     body {
       /* Try to use Proxima (Proxima Nova) if the user has it installed.
         If you want to load the commercial Proxima Nova webfont, add a webfont link
         (from your font provider) in the <head> and remove the !important below. */
-      font-family: 'Proxima Nova', 'Proxima', 'Helvetica Neue', Arial, sans-serif !important;
+  font-family: 'Proxima Nova', 'Proxima', 'Helvetica Neue', Arial, sans-serif;
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -22,7 +24,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 50px;
-      background-color: #e6ecef;
+  background-color: #111;
+  color: #fff;
     }
 
     header .logo {
@@ -41,7 +44,7 @@
 
     nav a {
       text-decoration: none;
-      color: #fff;
+  color: #fff;
       background: #888;
       padding: 8px 15px;
       border-radius: 20px;
@@ -57,7 +60,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 50px;
-      background: #8BD1CB;
+      background: #FFC907;
     }
 
     .hero-text {
@@ -90,6 +93,49 @@
       background: #e6ecef;
       margin-top: 40px;
     }
+
+    /* Donate Section - full black background, yellow button with black text */
+  .donate-section {
+    width: 100vw;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 0 56px 0;
+    margin: 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+  }
+  .donate-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .donate-btn {
+    background: #FFC907;
+    color: #111;
+    font-weight: bold;
+    font-size: 1.4em;
+    padding: 20px 56px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    letter-spacing: 1px;
+    display: inline-block;
+  }
+  .donate-btn:hover {
+    background: #ffd84d;
+    color: #000;
+    box-shadow: 0 4px 24px rgba(255,201,7,0.15);
+  }
   </style>
 </head>
 <body>
@@ -126,11 +172,13 @@
 
       /* Hero text box styles: a vertical box separate from the image */
       .hero-text-box {
-      background: #fff;
+  background: rgba(255,255,255,0.85);
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       padding: 40px 30px;
-      width: 360px; /* fixed column width to separate from the image */
+  width: 600px;
+  max-width: 600px;
+  min-width: 280px;
       height: calc(100vh - 70px); /* fill from under the header to the bottom */
       display: flex;
       flex-direction: column; /* stack text vertically */
@@ -164,13 +212,13 @@
        - max-width and max-height ensure the image scales while preserving intrinsic aspect ratio
        - width:auto and height:auto prevent distortion */
       section.hero > .hero-image img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      display: block;
-      border-radius: 10px;
-      /* object-fit not required here because we aren't forcing both width and height */
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  /* object-fit not required here because we aren't forcing both width and height */
       }
 
       /* Responsive: stack the box above the image on small screens */
@@ -328,6 +376,12 @@
   </section>
 
   <footer>
+  <!-- Donate Section -->
+  <section class="donate-section">
+    <div class="donate-content">
+      <a href="#" class="donate-btn">Donate Now</a>
+    </div>
+  </section>
     <p>&copy; 2025 Charity:Water | All Rights Reserved</p>
   </footer>
 </body>
